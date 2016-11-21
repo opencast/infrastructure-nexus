@@ -1,0 +1,7 @@
+---
+- name: restart geoip-gateway
+  become: yes
+  systemd:
+    name: geoip-gateway
+    state: restarted
+    daemon_reload: yes

@@ -1,0 +1,12 @@
+[Unit]
+Description=Opencast Nexus GeoIP Gateway
+After=network.target
+Before=nginx.service
+
+[Service]
+ExecStart={{ role.location.base }}/gunicorn.sh
+Restart=always
+User={{ role.owner }}
+
+[Install]
+WantedBy=multi-user.target

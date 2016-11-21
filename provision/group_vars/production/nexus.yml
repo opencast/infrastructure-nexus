@@ -1,0 +1,39 @@
+---
+nexus:
+  mirrors:
+    uos:
+      host:
+        name: nexus.virtuos.uos.de
+        port: 80
+        protocol: http
+      regions:
+        - DE
+        - FI
+        - NO
+        - SE
+        - IE
+    harvard:
+      host:
+        name: nexus.dcex.harvard.edu
+        port: 8081
+        protocol: http
+      regions:
+        - US
+    ethz:
+      host:
+        name: opencast-nexus.ethz.ch
+        port: 8081
+        protocol: http
+      regions:
+        - CH
+        - AT
+        - FR
+        - GB
+        - ES
+    usask:
+      host:
+        name: oc-cache.usask.ca
+        port: 8081
+        protocol: http
+      regions:
+        - CA

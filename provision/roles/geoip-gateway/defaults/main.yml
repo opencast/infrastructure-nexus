@@ -1,0 +1,11 @@
+---
+role:
+  mirrors: "{{ nexus.mirrors }}"
+  git:
+    url: "{{ geoip_gateway.git.url }}"
+    branch: "{{ geoip_gateway.git.branch }}"
+  owner: "{{ geoip_gateway.code.owner }}"
+  group: "{{ geoip_gateway.code.owner }}"
+  location:
+    base: "{{ geoip_gateway.location }}"
+    conf: "{{ geoip_gateway.location }}/nexus.opencast.org.json"

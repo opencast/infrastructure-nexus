@@ -1,0 +1,40 @@
+---
+# Example how the slaves dict for the nexus.json.j2 template should be structured
+# Also, these are the production settings as of 2016-11-18
+slaves:
+  uos:
+    host:
+      name: nexus.virtuos.uos.de
+      port: 8081
+      protocol: http
+    regions:
+      - DE
+      - FI
+      - NO
+      - SE
+      - IE
+  harvard:
+    host:
+      name: nexus.dcex.harvard.edu
+      port: 8081
+      protocol: http
+    regions:
+      - US
+  ethz:
+    host:
+      name: opencast-nexus.ethz.ch
+      port: 8081
+      protocol: http
+    regions:
+      - CH
+      - AT
+      - FR
+      - GB
+      - ES
+  usask:
+    host:
+      name: oc-cache.usask.ca
+      port: 8081
+      protocol: http
+    regions:
+      - CA

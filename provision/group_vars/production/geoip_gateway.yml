@@ -1,0 +1,7 @@
+---
+geoip_gateway:
+  location: "/opt/geoip-gateway"
+  owner: "lkiesow"
+  git:
+    url: "https://github.com/lkiesow/geoip-gateway"
+    branch: "master"

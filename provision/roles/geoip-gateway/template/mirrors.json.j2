@@ -1,0 +1,6 @@
+{ {% for key, value in role.mirrors.listitems() %} {# use .items() with Python 3.5 #}
+    "{{ value.host["protocol"]|e }}://{{ value.host["name"]|e }}:{{
+        value.host["port"]|e }}/nexus" : [{% for region in value.regions %}
+      "{{ region|e }}"{% if not loop.last %},{% endif %}{% endfor %}
+    ]{% if not loop.last %},{% endif %}{% endfor %}
+}

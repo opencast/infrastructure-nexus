@@ -1,0 +1,36 @@
+---
+- name: checkout code from git repository
+  become: yes
+  git:
+    repo: "{{ role.git.url }}"
+    dest: "{{ role.location.base }}"
+    version: "{{ role.git.branch }}"
+    clone: yes
+    force: yes
+
+- name: permissions for code directory
+  become: yes
+  file:
+    path: "{{ role.location.base }}"
+    owner: "{{ role.owner }}"
+    group: "{{ role.group }}"
+    state: directory
+    recurse: yes
+
+- name: write configuration json
+  become: yes
+  template:
+    source: mirrors.json.j2
+    dest: "{{ role.location.base }}/mirrors.json"
+    owner: "{{ role.owner }}"
+    group: "{{ role.group }}"
+  notify: restart geoip-gateway
+  
+- name: write systemd service file
+  become: yes
+  template:
+    source: geoip-gateway.service.j2
+    dest: "/etc/systemd/system/geoip-gateway.service"
+  notify: restart geoip-gateway
+
+- meta: flush_handlers
