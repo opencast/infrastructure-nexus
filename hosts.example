@@ -1,0 +1,10 @@
+[master]
+nexus.opencast.org ansible_user=CHANGE_ME
+
+[slave]
+nexus.virtuos.uos.de ansible_user=CHANGE_ME
+opencast-nexus.ethz.ch ansible_user=CHANGE_ME
+
+[production:children]
+master
+slave
