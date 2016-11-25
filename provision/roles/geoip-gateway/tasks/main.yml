@@ -1,4 +1,10 @@
 ---
+- name: install gunicorn wsgi server
+  become: yes
+  pip:
+    name: gunicorn
+    state: latest
+
 - name: checkout code from git repository
   become: yes
   git:
@@ -21,7 +27,7 @@
   become: yes
   template:
     source: mirrors.json.j2
-    dest: "{{ role.location.base }}/mirrors.json"
+    dest: "{{ role.location.base }}/nexus.opencast.org.json"
     owner: "{{ role.owner }}"
     group: "{{ role.group }}"
   notify: restart geoip-gateway

@@ -1,0 +1,5 @@
+---
+role:
+  geoip:
+    socket: "unix:{{ geoip_gateway.location }}/socket"
+    

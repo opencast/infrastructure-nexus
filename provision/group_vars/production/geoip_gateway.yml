@@ -1,7 +1,7 @@
 ---
 geoip_gateway:
   location: "/opt/geoip-gateway"
-  owner: "lkiesow"
+  owner: "georedirect"
   git:
     url: "https://github.com/lkiesow/geoip-gateway"
     branch: "master"

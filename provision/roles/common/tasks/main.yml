@@ -1,1 +1,6 @@
 ---
+- name: install pip
+  become: yes
+  yum:
+    name: python-pip
+    state: latest

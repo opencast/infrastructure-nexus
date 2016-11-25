@@ -1,0 +1,21 @@
+---
+- name: install/upgrade package
+  become: yes
+  yum:
+    name: nginx
+    state: latest
+  notify: restart nginx
+
+- name: enable permanently
+  become: yes
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: configure nexus reverse proxy
+  become: yes
+  template:
+    source: nexus.conf.j2
+    dest: "/etc/nginx/conf.d/nexus.conf"
+  notify: reload nginx

@@ -4,9 +4,11 @@ After=network.target
 Before=nginx.service
 
 [Service]
-ExecStart={{ role.location.base }}/gunicorn.sh
+WorkingDirectory={{ role.location.base }}
+ExecStart=/usr/bin/gunicorn -b unix:socket georedirect:app
 Restart=always
 User={{ role.owner }}
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target

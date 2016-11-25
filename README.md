@@ -8,21 +8,25 @@ It should set up the following:
 
   - [ ] [GeoIP Gateway](https://github.com/lkiesow/geoip-gateway) to redirect requests to the (geographically) nearest available mirror
     - [x] Install software (from Git)
-    - [ ] Install dependencies
+    - [x] Install dependencies
     - [x] Configure software
     - [x] Configure systemd
-    - [ ] Bind to Unix socket instead of Port
+    - [x] Bind to Unix socket instead of Port
   - [ ] Nexus repository instance
     - [ ] Install software
     - [ ] Configure software
     - [ ] Configure systemd
   - [ ] Nginx reverse proxy for the Nexus instance and (for the master server) the GeoIP Gateway.
-    - [ ] Install software
-    - [ ] Configure master reverse proxy
-    - [ ] Configure nexus mirror revers proxy
-    - [ ] Configure systemd
+    - [x] Install software
+    - [x] Configure master reverse proxy
+    - [x] Configure nexus mirror reverse proxy 
+    - [x] Configure systemd
   - [ ] Configure firewalld
     - [ ] Allow SSH
     - [ ] Allow Port 80 for http
     - [ ] Allow Port 443 for https
     - [ ] Deny all
+
+## ToDo
+
+  - Find sensible schema to configure repository inventory and hostnames for nginx-slave with as little redundancy as possible
